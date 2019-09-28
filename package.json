@@ -1,0 +1,11 @@
+{
+  "name": "yeahlow",
+  "version": "1.0.0",
+  "description": "This is the frontend to the yeahlow app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "MIT"
+}

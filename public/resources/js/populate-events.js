@@ -44,6 +44,7 @@ function populateEvents(map, position, eventsCallback) {
             let linkToGoogleMaps = `https://www.google.ch/maps/dir/${lat},${long}/${x.latitude},${x.longitude}/data=!3m1!4b1!4m2!4m1!3e3`;
             let link = x.name === "Geneva" ? "https://sbb.ch" : linkToGoogleMaps;
             let text = x.name === "Geneva" ? "Book now and save up to 70%!" : "Show me the way!";
+            let infoClass = x.name === "Geneva" ? "btn-primary-train-geneva" : "btn-primary-train";
 
             let infoWindow = new google.maps.InfoWindow({
                 content: `
@@ -53,7 +54,7 @@ function populateEvents(map, position, eventsCallback) {
                             <h4>Starts: ${x.start_time}</h4>
                             <h4>Ends: ${x.end_time}</h4>
                             
-                            <button class="btn btn-primary btn-primary-train" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="btn btn-primary ${infoClass}" type="button">
                                 <i class="fas fa-train"></i>
                                 <a target='_blank' href=${link}>${text}</a>
                             </button>

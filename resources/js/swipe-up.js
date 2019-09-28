@@ -1,13 +1,14 @@
-// Get a reference to an element.
-var square = document.querySelector('.square');
+var myElement = document.getElementById('myElement');
 
-// Create an instance of Hammer with the reference.
-var hammer = new Hammer(square);
+// create a simple instance
+// by default, it only adds horizontal recognizers
+var mc = new Hammer(myElement);
 
-// Subscribe to a quick start event: press, tap, or doubletap.
-// For a full list of quick start events, read the documentation.
-hammer.on('press', function(e) {
-    e.target.classList.toggle('expand');
-    console.log("You're pressing me!");
-    console.log(e);
+// let the pan gesture support all directions.
+// this will block the vertical scrolling on a touch-device while on the element
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+// listen to events...
+mc.on("panleft panright panup pandown tap press", function(ev) {
+    myElement.textContent = ev.type +" gesture detected.";
 });

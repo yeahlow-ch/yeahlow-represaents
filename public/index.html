@@ -57,12 +57,14 @@
         <div class="header">
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary btn-primary-filter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-primary btn-primary-filter" type="button" data-toggle="collapse"
+                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fas fa-filter"></i>
                     </button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary btn-primary-star" type="button" data-toggle="collapse"
+                    <button onclick="surpriseMe()" class="btn btn-primary btn-primary-star" type="button"
+                            data-toggle="collapse"
                             data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fas fa-star"></i>
                         Surprise me
@@ -89,65 +91,31 @@
 <script type="text/javascript" src="./resources/js/axios-init.js"></script>
 <script type="text/javascript" src="./resources/js/get-votes.js"></script>
 <script type="text/javascript" src="./resources/js/get-events.js"></script>
+<script type="text/javascript" src="./resources/js/populate-events.js"></script>
+<script type="text/javascript" src="./resources/js/populate-votes.js"></script>
 <script type="text/javascript">
+
+    let map = undefined;
+
+    function surpriseMe() {
+        if (map !== undefined) {
+            getSurpriseEvent(function (x) {
+                map.panTo(new google.maps.LatLng(Number(x.latitude), Number(x.longitude)));
+            });
+        }
+    }
 
     // called on load of #map
     function initMap() {
         // create the map
-        const map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 14,
             center: {lat: 47.390, lng: 8.516},
             // mapTypeId: 'terrain'
         });
 
-        // populate events
-        getEvents(function (data) {
-            let markers = data.map(function (x) {
-                let marker = new google.maps.Marker({
-                    position: {
-                        "lat": Number(x.latitude),
-                        "lng": Number(x.longitude)
-                    },
-                    map: map,
-                    title: x.name
-                });
-
-                let infoWindow = new google.maps.InfoWindow({
-                    content: `
-                        <div class="info">
-                            <h3>${x.name}</h3>
-                            <h4>${x.description}</h4>
-                            <h4>${x.start_time} - ${x.end_time}</h4>
-                        </div>
-                    `
-                });
-
-                marker.addListener('click', function () {
-                    infoWindow.open(map, marker);
-                });
-
-
-            });
-        });
-
-        // populate circles
-        getVotes(function (data) {
-            let circles = data.map(function (x) {
-                return new google.maps.Circle({
-                    strokeColor: '#EF915D',
-                    strokeOpacity: 0.8,
-                    strokeWeight: 2,
-                    fillColor: '#EF915D',
-                    fillOpacity: 0.35,
-                    map: map,
-                    center: {
-                        "lat": Number(x.latitude),
-                        "lng": Number(x.longitude)
-                    },
-                    radius: Math.sqrt(Number(x.hotness) / 10) * 100
-                });
-            });
-        });
+        populateEvents(map);
+        populateVotes(map);
     }
 </script>
 <script async defer

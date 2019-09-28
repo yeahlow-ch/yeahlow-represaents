@@ -110,25 +110,20 @@
 
     // called on load of #map
     function initMap() {
-        function setMapPosiition() {
-            let [lat, long] = position;
-            // create the map
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                center: {lat: lat, lng: long},
-                // mapTypeId: 'terrain'
-            });
+        let [lat, long] = position;
+        // create the map
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: {lat: lat, lng: long},
+            // mapTypeId: 'terrain'
+        });
 
-            populateEvents(map);
-            populateVotes(map);
-        }
+        populateEvents(map);
+        populateVotes(map);
 
         navigator.geolocation.getCurrentPosition(p => {
             position = [p.coords.latitude, p.coords.longitude];
-            setMapPosiition();
-        }, _ => {
-            // just use the default position
-            setMapPosiition();
+            map.panTo(new google.maps.LatLng(p.coords.latitude, p.coords.longitude));
         });
     }
 </script>

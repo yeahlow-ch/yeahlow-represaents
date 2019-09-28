@@ -4,7 +4,7 @@ function getVotes(callback) {
         .then(function (response) {
             // handle success
             callback(response.data);
-            console.log("Success");
+            console.log("Success on getVotes");
 
         })
         .catch(function (error) {

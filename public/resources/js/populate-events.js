@@ -55,7 +55,7 @@ function populateEvents(map, position, eventsCallback) {
                             <h4>Ends: ${x.end_time}</h4>
                             
                             <button class="btn btn-primary ${infoClass}" type="button">
-                                <i class="fas fa-train"></i>
+                                ${ x.name == "Geneva" ?  '<img src="./resources/images/SBBsignet.jpg" alt="SBB logo" height="25" width="25">' : '<i class="fas fa-train"></i>'}
                                 <a target='_blank' href=${link}>${text}</a>
                             </button>
                         </div>

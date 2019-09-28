@@ -86,6 +86,10 @@ html, body {
     margin-right: 10px;
 }
 
+.btn-primary-train-geneva img {
+    margin-top: -3px
+}
+
 .btn-primary-train a, .btn-primary-train-geneva a {
     color: white;
 }

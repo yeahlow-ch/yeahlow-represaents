@@ -21,3 +21,12 @@
 .info h4:first-of-type {
     margin-top: 5px;
 }
+
+.info h5 {
+    font-size: 1em;
+    font-weight: 100;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

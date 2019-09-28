@@ -15,6 +15,7 @@ function populateEvents(map) {
                 content: `
                         <div class="info">
                             <h3>${x.name}</h3>
+                            <h5>${x.description}</h5>
                             <h4>Starts: ${x.start_time}</h4>
                             <h4>Ends: ${x.end_time}</h4>
                         </div>

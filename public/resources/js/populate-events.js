@@ -1,7 +1,7 @@
-function populateEvents(map, position) {
+function populateEvents(map, position, eventsCallback) {
     // populate events
     getEvents(function (data) {
-        let markers = data.map(function (x) {
+        eventsCallback(data.map(function (x) {
             var icons = {
                 food: {
                     url: "../public/resources/images/markers/png/Food_1.png",
@@ -60,11 +60,13 @@ function populateEvents(map, position) {
                     `
             });
 
+            let openInfoWindow = () => infoWindow.open(map, marker);
+
             marker.addListener('click', function () {
-                infoWindow.open(map, marker);
+                openInfoWindow();
             });
 
-
-        });
+            return {id: x.id, open: openInfoWindow};
+        }));
     });
 }

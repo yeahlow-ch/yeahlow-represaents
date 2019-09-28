@@ -96,6 +96,7 @@
 <script type="text/javascript">
 
     let map = undefined;
+    let events = undefined;
     let position = [47.378136, 8.539428]; // Zurich Main Station
     let range = 400;
 
@@ -104,6 +105,9 @@
             let [lat, long] = position;
             getSurpriseEvent(lat, long, range, x => {
                 map.panTo(new google.maps.LatLng(Number(x.latitude), Number(x.longitude)));
+                if (events !== undefined) {
+                    events.find(o => o.id === x.id).open();
+                }
             });
         }
     }
@@ -123,9 +127,8 @@
             map.panTo(new google.maps.LatLng(p.coords.latitude, p.coords.longitude));
         });
 
-        populateEvents(map, () => position);
+        populateEvents(map, () => position, (data) => events = data);
         populateVotes(map);
-
     }
 </script>
 <script async defer

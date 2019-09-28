@@ -1,4 +1,4 @@
-var myElement = document.getElementById('myElement');
+var myElement = document.getElementById('vote');
 
 // create a simple instance
 // by default, it only adds horizontal recognizers

@@ -1,6 +1,55 @@
-#myElement {
-    background: silver;
-    height: 300px;
+.noPadding {
+    padding: 0 !important;
+}
+
+.container-fluid {
+    background-color: #EF915D;
+    height: 100vh;
+}
+
+.yeah {
+     background: #5DBCD2;
+     color: white;
+     height: 60%;
+     text-align: center;
+     font: 30px 'Montserrat';
+}
+
+.low {
+    color: white;
+    height: 60%;
     text-align: center;
-    font: 30px/300px Helvetica, Arial, sans-serif;
+    font: 30px 'Montserrat';
+}
+
+p {
+    font-size: 1.5rem;
+    height: 100px;
+    padding-top: 100px;
+}
+
+h1 {
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+h2 {
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+.fa-angle-double-up {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 0.5s infinite  alternate;
+    padding-top: 150px;
+    font-size: 70px;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+.fa-angle-down {
+    font-size: 70px;
 }

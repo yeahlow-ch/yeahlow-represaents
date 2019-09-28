@@ -1,6 +1,20 @@
 {
     "short_name": "yeahlow",
     "name": "yeahlow",
+    "icons": [
+        {
+            "src": "/resources/images/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/resources/images/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "scope": "/",
     "background_color": "#5DBCD2",
     "display": "standalone",
     "theme_color": "#EF915D"

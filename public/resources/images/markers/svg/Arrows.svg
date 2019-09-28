@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="48px"
+	 viewBox="0 0 96 48" enable-background="new 0 0 96 48" xml:space="preserve">
+<filter  height="200%" width="200%" x="-50%" id="filter-2" filterUnits="objectBoundingBox" y="-50%">
+	<feGaussianBlur  stdDeviation="2.07261029" in="SourceGraphic" result="blur"></feGaussianBlur>
+</filter>
+<title>Arrow_1</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1_1_" sketch:type="MSPage">
+	<g id="Arrow_1" sketch:type="MSArtboardGroup">
+		<g id="Bulle-01" transform="translate(0.000000, 2.000000)" sketch:type="MSLayerGroup">
+			<g id="Ombre" transform="translate(0.000000, 17.000000)" sketch:type="MSShapeGroup" filter="url(#filter-2)">
+				<g>
+					<g>
+						
+							<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-260.3208" y1="334.9551" x2="-260.3208" y2="335.9551" gradientTransform="matrix(42.0532 0 0 22 11019 -7369)">
+							<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+							<stop  offset="1" style="stop-color:#000000"/>
+						</linearGradient>
+						<path opacity="0.75" fill="url(#SVGID_1_)" enable-background="new    " d="M72.991,22l-4.32-5.959h-6.729
+							c-4.248,0-6.767-2.162-8.089-4.823c0,0-3.197-11.218,2.216-11.218H81.11c5.41,0,9.578,2.164,9.311,4.824l-0.643,6.394
+							c-0.268,2.664-3.924,4.823-8.176,4.823h-6.648L72.991,22z"/>
+					</g>
+				</g>
+			</g>
+			<g id="Bulle" transform="translate(4.000000, 0.000000)" sketch:type="MSShapeGroup">
+				<g id="Triangle-1_1_">
+					<path fill="#B5AB92" stroke="#FFFFFF" stroke-width="0.5" d="M71.632,29.166L68.045,40l-3.586-10.834h-7.458
+						c-4.972,0-9.002-4.023-9.002-9.008V9.009C47.999,4.033,52.036,0,57.001,0h21.996c4.973,0,9.002,4.025,9.002,9.009v11.149
+						c0,4.975-4.037,9.008-9.002,9.008H71.632z"/>
+				</g>
+			</g>
+		</g>
+		<path id="Page-1" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M72.798,24.186l-1.476-6.172l-6.117-1.529l12.083-4.436
+			L72.798,24.186z M71.999,7c-5.522,0-10,4.477-10,10s4.478,10,10,10c5.523,0,10-4.477,10-10S77.522,7,71.999,7L71.999,7z"/>
+	</g>
+</g>
+<g id="Page-1_2_" sketch:type="MSPage">
+	<g id="Coffee_3" sketch:type="MSArtboardGroup">
+		<g id="Bulle-01_1_" transform="translate(0.000000, 2.000000)" sketch:type="MSLayerGroup">
+			<g id="Ombre_1_" transform="translate(0.000000, 17.000000)" sketch:type="MSShapeGroup" filter="url(#filter-2)">
+				<g>
+					<g>
+						
+							<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-261.4624" y1="334.9531" x2="-261.4624" y2="335.9531" gradientTransform="matrix(42.0532 0 0 22 11019 -7369)">
+							<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+							<stop  offset="1" style="stop-color:#000000"/>
+						</linearGradient>
+						<path opacity="0.75" fill="url(#SVGID_2_)" enable-background="new    " d="M24.992,22l-4.321-5.959h-6.73
+							c-4.247,0-6.766-2.162-8.089-4.823C5.852,11.218,2.656,0,8.069,0h25.042c5.41,0,9.578,2.164,9.311,4.824l-0.643,6.394
+							c-0.268,2.664-3.924,4.823-8.176,4.823h-6.648L24.992,22z"/>
+					</g>
+				</g>
+			</g>
+			<g id="Bulle_1_" transform="translate(4.000000, 0.000000)" sketch:type="MSShapeGroup">
+				<g id="Triangle-1_2_">
+					<path fill="#303030" stroke="#FFFFFF" stroke-width="0.5" d="M23.633,29.166L20.045,40l-3.586-10.834H9.001
+						C4.03,29.166,0,25.142,0,20.158V9.009C0,4.033,4.037,0,9.001,0h21.997C35.971,0,40,4.025,40,9.009v11.149
+						c0,4.975-4.037,9.008-9.002,9.008H23.633z"/>
+				</g>
+			</g>
+		</g>
+		
+			<g id="coffee-8-icon-path-_x2B_-coffee-8-icon-path-_x2B_-coffee-7-icon-path-_x2B_-Rectangle-4" transform="translate(18.000000, 5.000000)" sketch:type="MSLayerGroup">
+			<g id="coffee-8-icon-path-_x2B_-coffee-8-icon-path" transform="translate(2.557692, 0.000000)" sketch:type="MSShapeGroup">
+				<path id="coffee-8-icon-path" fill="#FFFFFF" d="M4.073,8.405C9.31,3.277,2.989,3.548,4.202,0
+					C0.021,4.583,5.761,4.686,4.073,8.405L4.073,8.405z"/>
+				<path id="coffee-8-icon-path_1_" fill="#FFFFFF" d="M0.999,8.406C4.485,5.013,0.264,4.68,1.096,2.283
+					C-1.826,5.629,2.147,5.716,0.999,8.406L0.999,8.406z"/>
+			</g>
+			<g id="coffee-7-icon-path-_x2B_-Rectangle-4" transform="translate(0.000000, 10.006054)" sketch:type="MSShapeGroup">
+				<path id="coffee-7-icon-path" fill="#FFFFFF" d="M10.025,6.863C9.58,7.76,9.088,8.545,8.605,9.278H3.089
+					C1.642,7.061,0.182,4.575,0,0h11.695c-0.014,0.352-0.034,0.692-0.063,1.021l0.033-0.116l1.004,0.288
+					C15.395,1.974,13.436,6.477,10.025,6.863z M10.611,5.535c0.386-0.996,0.701-2.127,0.895-3.449l0.639,0.183
+					C13.408,2.632,12.455,4.842,10.611,5.535z"/>
+				<rect id="Rectangle-4" x="0.716" y="9.771" fill="#FFFFFF" width="10.255" height="1.129"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

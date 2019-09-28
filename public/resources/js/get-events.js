@@ -13,8 +13,8 @@ function getEvents(callback) {
         });
 }
 
-function getSurpriseEvent(callback) {
-    instance.get('/events/surprise?latitude=47.389634&longitude=8.516191&range=400')
+function getSurpriseEvent(lat, long, range, callback) {
+    instance.get('/events/surprise?latitude=' + lat + '&longitude=' + long + '&range=' + range)
         .then(function (response) {
             // handle success
             callback(response.data);

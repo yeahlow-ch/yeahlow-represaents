@@ -96,10 +96,12 @@
 <script type="text/javascript">
 
     let map = undefined;
+    let position = undefined;
+    let range = 400;
 
     function surpriseMe() {
         if (map !== undefined) {
-            getSurpriseEvent(function (x) {
+            getSurpriseEvent(position.coords.latitude, position.coords.longitude, range, x => {
                 map.panTo(new google.maps.LatLng(Number(x.latitude), Number(x.longitude)));
             });
         }
@@ -107,15 +109,18 @@
 
     // called on load of #map
     function initMap() {
-        // create the map
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: {lat: 47.390, lng: 8.516},
-            // mapTypeId: 'terrain'
-        });
+        navigator.geolocation.getCurrentPosition(p => {
+            position = p;
+            // create the map
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                // mapTypeId: 'terrain'
+            });
 
-        populateEvents(map);
-        populateVotes(map);
+            populateEvents(map);
+            populateVotes(map);
+        })
     }
 </script>
 <script async defer

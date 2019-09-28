@@ -47,7 +47,7 @@ html, body {
     position: relative;
 }
 
-.btn-primary {
+.btn-primary-star {
     position: absolute;
     height: 40px;
     background-color: #EF915D !important;
@@ -56,6 +56,10 @@ html, body {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10);
 }
 
+.btn-primary-filter {
+    background-color: #EF915D !important;
+    border-color: #EF915D !important;
+}
 
 .low {
     color: white;

@@ -1,4 +1,4 @@
-function populateEvents(map) {
+function populateEvents(map, position) {
     // populate events
     getEvents(function (data) {
         let markers = data.map(function (x) {
@@ -40,6 +40,10 @@ function populateEvents(map) {
                 title: x.name
             });
 
+            let [lat, long] = position();
+
+            let linkToGoogleMaps = `https://www.google.ch/maps/dir/${lat},${long}/${x.latitude},${x.longitude}/data=!3m1!4b1!4m2!4m1!3e3`;
+
             let infoWindow = new google.maps.InfoWindow({
                 content: `
                         <div class="info">
@@ -47,6 +51,11 @@ function populateEvents(map) {
                             <h5>${x.description}</h5>
                             <h4>Starts: ${x.start_time}</h4>
                             <h4>Ends: ${x.end_time}</h4>
+                            
+                            <button class="btn btn-primary btn-primary-train" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-train"></i>
+                                <a target='_blank' href=${linkToGoogleMaps}>Book now and save up to 70%!</a>
+                            </button>
                         </div>
                     `
             });

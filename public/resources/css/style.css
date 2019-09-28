@@ -10,6 +10,7 @@ html, body {
 #map-container {
     height: 100%;
     display: none;
+    background-color: #5DBCD2;
 }
 
 .noPadding {
@@ -34,12 +35,16 @@ html, body {
     height: 80px;
     padding: 20px;
     background: #5DBCD2;
+    position: relative;
 }
 
 .btn-primary {
+    position: absolute;
     height: 40px;
     background-color: #EF915D !important;
     border-color: #EF915D !important;
+    right: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10);
 }
 
 #map {

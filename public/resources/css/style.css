@@ -114,3 +114,49 @@ h2 {
 .fa-angle-down {
     font-size: 70px;
 }
+
+/* Modal Range Dialog */
+#range-dialog {
+    background-color: #5DBCD2;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+}
+
+.center-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#range-question {
+    padding: 0;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font: 30px 'Montserrat' 
+}
+
+#range-input {
+    margin: auto;
+    text-align: center;
+}
+
+.range-input-form {
+    width: 200px !important;
+    margin: auto;
+}
+
+.btn-primary-go {
+    margin: 10px auto;
+    height: 40px;
+    background-color: #EF915D !important;
+    border-color: #EF915D !important;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10);
+}

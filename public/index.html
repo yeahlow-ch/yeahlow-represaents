@@ -52,6 +52,28 @@
             </div>
         </div>
     </div>
+    <div id="range-dialog">
+        <div class='center-wrapper'>
+            <div class="row">
+                <p id="range-question">How far do you want to travel?</p>
+            </div>
+            <div class="row">
+                <div class="input-group range-input-form">
+                    <input id='range-input' class='form-control' type="number" value="10" min="0" max="500" step="1"/>
+                    <div class="input-group-append">
+                        <span class="input-group-text">km</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="surpriseMe()" class="btn btn-primary btn-primary-go" type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Go
+                </button>
+            </div>
+        </div>
+    </div>
     <div id="map-container">
         <div id="map"></div>
         <div class="header">
@@ -63,7 +85,7 @@
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="surpriseMe()" class="btn btn-primary btn-primary-star" type="button"
+                    <button onclick="getRange()" class="btn btn-primary btn-primary-star" type="button"
                             data-toggle="collapse"
                             data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fas fa-star"></i>
@@ -98,9 +120,10 @@
     let map = undefined;
     let events = undefined;
     let position = [47.378136, 8.539428]; // Zurich Main Station
-    let range = 400;
 
     function surpriseMe() {
+        document.getElementById('range-dialog').style.display='none';
+        let range = document.getElementById('range-input').value;
         if (map !== undefined) {
             let [lat, long] = position;
             getSurpriseEvent(lat, long, range, x => {
@@ -110,6 +133,10 @@
                 }
             });
         }
+    }
+
+    function getRange() {
+        document.getElementById('range-dialog').style.display='block';
     }
 
     // called on load of #map

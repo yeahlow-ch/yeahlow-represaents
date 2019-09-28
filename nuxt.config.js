@@ -1,3 +1,5 @@
+const path = require('path');
+const glob = require('glob');
 
 export default {
   mode: 'universal',
@@ -12,7 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
   /*
@@ -28,6 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/firebase-init'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -46,7 +49,14 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config) {
+      config.module.rules.push({
+        loader: 'sass-loader',
+        test: /\.(scss|sass)$/,
+        options: {
+          includePaths: glob.sync(path.join(__dirname, 'node_modules'))
+        }
+      })
     }
   }
 }

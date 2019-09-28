@@ -3,10 +3,10 @@ function populateVotes(map) {
     getVotes(function (data) {
         let circles = data.map(function (x) {
             return new google.maps.Circle({
-                strokeColor: '#EF915D',
+                strokeColor: x.hotness_color,
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillColor: '#EF915D',
+                fillColor: x.hotness_color,
                 fillOpacity: 0.35,
                 map: map,
                 center: {

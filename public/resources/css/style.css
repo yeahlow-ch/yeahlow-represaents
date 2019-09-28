@@ -59,6 +59,7 @@ html, body {
 .btn-primary-filter {
     background-color: #EF915D !important;
     border-color: #EF915D !important;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10);
 }
 
 .low {

@@ -79,15 +79,15 @@
         <div class="header">
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary btn-primary-filter" type="button" data-toggle="collapse"
-                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-primary btn-primary-filter" type="button">
                         <i class="fas fa-filter"></i>
+                    </button>
+                    <button onclick="moveToCurrentLocation()" class="btn btn-primary btn-primary-crosshairs" type="button">
+                        <i class="fas fa-crosshairs"></i>
                     </button>
                 </div>
                 <div class="col">
-                    <button onclick="getRange()" class="btn btn-primary btn-primary-star" type="button"
-                            data-toggle="collapse"
-                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button onclick="getRange()" class="btn btn-primary btn-primary-star" type="button">
                         <i class="fas fa-star"></i>
                         Surprise me
                     </button>
@@ -140,6 +140,13 @@
         document.getElementById('range-dialog').style.display='block';
     }
 
+    function moveToCurrentLocation() {
+        navigator.geolocation.getCurrentPosition(p => {
+            position = [p.coords.latitude, p.coords.longitude];
+            map.panTo(new google.maps.LatLng(p.coords.latitude, p.coords.longitude));
+        });
+    }
+
     // called on load of #map
     function initMap() {
         let [lat, long] = position;
@@ -150,10 +157,7 @@
             // mapTypeId: 'terrain'
         });
 
-        navigator.geolocation.getCurrentPosition(p => {
-            position = [p.coords.latitude, p.coords.longitude];
-            map.panTo(new google.maps.LatLng(p.coords.latitude, p.coords.longitude));
-        });
+        moveToCurrentLocation();
 
         populateEvents(map, () => position, (data) => events = data);
         populateVotes(map);

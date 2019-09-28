@@ -96,12 +96,13 @@
 <script type="text/javascript">
 
     let map = undefined;
-    let position = undefined;
+    let position = [47.378136, 8.539428]; // Zurich Main Station
     let range = 400;
 
     function surpriseMe() {
         if (map !== undefined) {
-            getSurpriseEvent(position.coords.latitude, position.coords.longitude, range, x => {
+            let [lat, long] = position;
+            getSurpriseEvent(lat, long, range, x => {
                 map.panTo(new google.maps.LatLng(Number(x.latitude), Number(x.longitude)));
             });
         }
@@ -109,18 +110,26 @@
 
     // called on load of #map
     function initMap() {
-        navigator.geolocation.getCurrentPosition(p => {
-            position = p;
+        function setMapPosiition() {
+            let [lat, long] = position;
             // create the map
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 14,
-                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                center: {lat: lat, lng: long},
                 // mapTypeId: 'terrain'
             });
 
             populateEvents(map);
             populateVotes(map);
-        })
+        }
+
+        navigator.geolocation.getCurrentPosition(p => {
+            position = [p.coords.latitude, p.coords.longitude];
+            setMapPosiition();
+        }, _ => {
+            // just use the default position
+            setMapPosiition();
+        });
     }
 </script>
 <script async defer

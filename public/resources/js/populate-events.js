@@ -1,30 +1,30 @@
-function populateEvents(map, position) {
+function populateEvents(map, position, eventsCallback) {
     // populate events
     getEvents(function (data) {
-        let markers = data.map(function (x) {
+        eventsCallback(data.map(function (x) {
             var icons = {
                 food: {
-                    url: "../public/resources/images/markers/png/Food_1.png",
+                    url: "./resources/images/markers/svg/Food_1.svg",
                     scaledSize: new google.maps.Size(64, 64)
                 },
                 animal: {
-                    url: "../public/resources/images/markers/png/Deer_6.png",
+                    url: "./resources/images/markers/svg/Deer_6.svg",
                     scaledSize: new google.maps.Size(64, 64)
                 },
                 sport: {
-                    url: "../public/resources/images/markers/png/Flag_7.png",
+                    url: "./resources/images/markers/svg/Flag_7.svg",
                     scaledSize: new google.maps.Size(64, 64)
                 },
                 party: {
-                    url: "../public/resources/images/markers/png/Beer_8.png",
+                    url: "./resources/images/markers/svg/Beer_8.svg",
                     scaledSize: new google.maps.Size(64, 64)
                 },
                 hackathon: {
-                    url: "../public/resources/images/markers/png/Rocket_2.png",
+                    url: "./resources/images/markers/svg/Rocket_2.svg",
                     scaledSize: new google.maps.Size(64, 64)
                 },
                 culture: {
-                    url: "../public/resources/images/markers/png/Artist_5.png",
+                    url: "./resources/images/markers/svg/Artist_5.svg",
                     scaledSize: new google.maps.Size(64, 64)
                 }
             };
@@ -60,11 +60,13 @@ function populateEvents(map, position) {
                     `
             });
 
+            let openInfoWindow = () => infoWindow.open(map, marker);
+
             marker.addListener('click', function () {
-                infoWindow.open(map, marker);
+                openInfoWindow();
             });
 
-
-        });
+            return {id: x.id, open: openInfoWindow};
+        }));
     });
 }

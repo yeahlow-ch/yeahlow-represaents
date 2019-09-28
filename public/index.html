@@ -57,12 +57,13 @@
         <div class="header">
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary btn-primary-filter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-primary btn-primary-filter" type="button" data-toggle="collapse"
+                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fas fa-filter"></i>
                     </button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary btn-primary-star" type="button" data-toggle="collapse"
+                    <button onclick="surpriseMe()" class="btn btn-primary btn-primary-star" type="button" data-toggle="collapse"
                             data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         <i class="fas fa-star"></i>
                         Surprise me
@@ -91,14 +92,25 @@
 <script type="text/javascript" src="./resources/js/get-events.js"></script>
 <script type="text/javascript">
 
+    let map = undefined;
+
+    function surpriseMe() {
+        if (map !== undefined) {
+            getSurpriseEvent(function (x) {
+                map.panTo(new google.maps.LatLng(Number(x.latitude), Number(x.longitude)));
+            });
+        }
+    }
+
     // called on load of #map
     function initMap() {
         // create the map
-        const map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 14,
             center: {lat: 47.390, lng: 8.516},
             // mapTypeId: 'terrain'
         });
+
 
         // populate events
         getEvents(function (data) {

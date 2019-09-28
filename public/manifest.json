@@ -1,9 +1,7 @@
 {
     "short_name": "yeahlow",
     "name": "yeahlow",
-    "start_url": "/",
     "background_color": "#5DBCD2",
     "display": "standalone",
-    "scope": "/",
     "theme_color": "#EF915D"
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="cache-control" content="no-store">
-    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="max-age=0"/>
     <title>yeahlow</title>
 
     <link rel="manifest" href="./manifest.json">
@@ -84,7 +84,8 @@
                     <button class="btn btn-primary btn-primary-filter" type="button">
                         <i class="fas fa-filter"></i>
                     </button>
-                    <button onclick="moveToCurrentLocation()" class="btn btn-primary btn-primary-crosshairs" type="button">
+                    <button onclick="moveToCurrentLocation()" class="btn btn-primary btn-primary-crosshairs"
+                            type="button">
                         <i class="fas fa-crosshairs"></i>
                     </button>
                 </div>
@@ -123,9 +124,10 @@
     let map = undefined;
     let position = [47.3901899, 8.5136498]; // Technopark
     let events = undefined;
+    let votes = undefined;
 
     function surpriseMe() {
-        document.getElementById('range-dialog').style.display='none';
+        document.getElementById('range-dialog').style.display = 'none';
         let range = document.getElementById('range-input').value;
         if (map !== undefined) {
             let [lat, long] = position;
@@ -139,7 +141,7 @@
     }
 
     function getRange() {
-        document.getElementById('range-dialog').style.display='block';
+        document.getElementById('range-dialog').style.display = 'block';
     }
 
     function moveToCurrentLocation() {
@@ -162,7 +164,22 @@
         moveToCurrentLocation();
 
         populateEvents(map, () => position, (data) => events = data);
-        populateVotes(map);
+        populateVotes(map, (data) => votes = data);
+
+
+        setInterval(function () {
+            getVotes(function (data) {
+                votes.forEach(function (vote) {
+                    let match = data.find(o => o.place === vote.id);
+                    let oldVal = vote.circle.radius;
+                    let newVal = match.hotness;
+                    if (oldVal !== newVal) {
+                        console.log("Updating radius " + vote.circle.radius + " on " + vote.id + " with " + match.hotness)
+                        vote.circle.setRadius(match.hotness);
+                    }
+                });
+            });
+        }, 3000);
     }
 </script>
 <script async defer

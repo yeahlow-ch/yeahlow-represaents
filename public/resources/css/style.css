@@ -18,15 +18,18 @@
 
 .header {
     height: 80px;
+    padding: 20px;
     background: #5DBCD2;
 }
 
-.btn {
+.btn-primary {
     height: 40px;
+    background-color: #EF915D !important;
+    border-color: #EF915D !important;
 }
 
 #map {
-    height: 90%
+    height: 90%;
     padding: 20px;
 }
 

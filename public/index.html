@@ -161,6 +161,20 @@
 
         moveToCurrentLocation();
 
+        let marker = new google.maps.Marker({
+            position: {
+                "lat": Number(lat),
+                "lng": Number(long)
+            },
+            // icon: icons[features[i].type].icon,
+            icon: {
+                url: "./resources/images/markers/svg/Arrow_4.svg",
+                scaledSize: new google.maps.Size(40, 40)
+            },
+            map: map,
+            title: 'current position'
+        });
+
         populateEvents(map, () => position, (data) => events = data);
         populateVotes(map);
     }

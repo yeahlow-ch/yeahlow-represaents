@@ -172,10 +172,10 @@
                 votes.forEach(function (vote) {
                     let match = data.find(o => o.place === vote.id);
                     let oldVal = vote.circle.radius;
-                    let newVal = match.hotness;
+                    let newVal = calcRadius(match.hotness);
                     if (oldVal !== newVal) {
-                        console.log("Updating radius " + vote.circle.radius + " on " + vote.id + " with " + match.hotness)
-                        vote.circle.setRadius(match.hotness);
+                        console.log("Updating " + vote.id + ": " + oldVal + "=>" + newVal);
+                        vote.circle.setRadius(newVal);
                     }
                 });
             });

@@ -2,6 +2,7 @@ function populateVotes(map, votesCallback) {
     // populate circles
     getVotes(function (data) {
         votesCallback(data.map(function (x) {
+            console.log(`${x.place} has ${x.hotness}`)
             return {
                 id: x.place, circle: new google.maps.Circle({
                     strokeColor: x.hotness_color,
@@ -22,5 +23,5 @@ function populateVotes(map, votesCallback) {
 }
 
 function calcRadius(value) {
-    return Math.sqrt(Number(value) / 10) * 100;
+    return Number(value);
 }

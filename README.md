@@ -27,3 +27,8 @@ Before deploying, make sure the `API_KEY` is set.
 ```
 firebase deploy
 ```
+
+### Resources
+
+
+[Google Maps API docs](https://developers.google.com/maps/documentation/javascript/tutorial)

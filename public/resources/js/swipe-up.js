@@ -11,8 +11,6 @@ mc.get('pan').set({direction: Hammer.DIRECTION_ALL});
 
 // listen to events...
 mc.on("panup pandown", function (ev) {
-    let position = [47.3901899, 8.5136498]; // Technopark
-
     navigator.geolocation.getCurrentPosition(p => {
         postVotes(p.coords.latitude, p.coords.longitude, ev.type === 'panup' ? 1 : 0);
     });
